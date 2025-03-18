@@ -7,8 +7,7 @@ import { BlockList, BlockListDocument, Student, StudentDocument } from "src/sche
 @Injectable()
 export class BotService {
   private bot: TelegramBot;
-  private readonly teacherChatId = 7515472989; // Define teacher ID as a constant
-
+  private readonly teacherChatId = parseInt(process.env.TEACHER_TELEGRAM_ID as string); // Define teacher ID as a constant
   constructor(
     @InjectModel(Student.name) private studentModel: Model<StudentDocument>,
     @InjectModel(BlockList.name) private blockListModel: Model<BlockListDocument>
